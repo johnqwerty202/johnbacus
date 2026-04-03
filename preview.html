@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. John A. Bacus | Faculty Profile</title>
+  <meta
+    name="description"
+    content="Official faculty profile of Dr. John A. Bacus, Associate Professor IV, College of Engineering and Architecture, Mapúa Malayan Colleges Mindanao."
+  />
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --surface: #ffffff;
+      --surface-soft: #f3f4f6;
+      --text: #171717;
+      --muted: #6b7280;
+      --primary: #7a0019;
+      --primary-dark: #5b0012;
+      --border: #e5e7eb;
+      --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.05);
+      --radius: 22px;
+      --max: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247, 247, 245, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: #fff;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .hero {
+      padding: 72px 0 54px;
+      background: var(--bg);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 1.06;
+      margin-bottom: 16px;
+      color: #111827;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.03rem;
+      max-width: 650px;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .meta-pill {
+      padding: 9px 13px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: #374151;
+      font-size: 0.9rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      max-width: 720px;
+    }
+
+    .stat {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .stat h3 {
+      font-size: 1.15rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .stat p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .hero-photo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo-card {
+      width: 100%;
+      max-width: 430px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 22px;
+    }
+
+    .hero-photo-caption {
+      padding: 14px 6px 4px;
+    }
+
+    .hero-photo-caption h2 {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+      color: #111827;
+    }
+
+    .hero-photo-caption p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .section-head h2 {
+      font-size: 1.95rem;
+      color: #111827;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 6px;
+      font-size: 1.08rem;
+      color: #111827;
+    }
+
+    .timeline-item .meta {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 0.92rem;
+    }
+
+    .timeline-item ul {
+      padding-left: 18px;
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .timeline-item ul li {
+      margin-bottom: 8px;
+    }
+
+    .cards-2,
+    .cards-3 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .cards-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+      color: #111827;
+    }
+
+    .card .meta {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 12px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .pub-section {
+      margin-bottom: 34px;
+    }
+
+    .pub-section-title {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .pub-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .pub-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .pub-item h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #111827;
+      line-height: 1.45;
+    }
+
+    .pub-item p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    .pub-item a {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .pub-actions {
+      margin-bottom: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .highlight {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .update-box {
+      background: #fff;
+    }
+
+    .footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid var(--border);
+      background: #fbfbfa;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .cards-2,
+      .cards-3,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .hero-photo-card {
+        max-width: 520px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2.15rem;
+      }
+
+      .section-head h2 {
+        font-size: 1.55rem;
+      }
+
+      .timeline-item,
+      .card,
+      .pub-item,
+      .stat,
+      .hero-photo-card {
+        padding: 18px;
+      }
+
+      .hero-photo-card {
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#home" class="brand">Dr. John A. Bacus</a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#current-projects">Current Projects</a>
+        <a href="#funded-projects">Funded Projects</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#updates">Updates</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Faculty Profile</div>
+          <h1>
+            John A. Bacus, <span>PhD</span>
+          </h1>
+          <p>
+            Associate Professor IV at Mapúa Malayan Colleges Mindanao, College of Engineering and Architecture.
+            His work engages artificial intelligence, computer vision, embedded systems, educational technology,
+            and applied engineering research.
+          </p>
+
+          <div class="hero-meta">
+            <span class="meta-pill">Associate Professor IV</span>
+            <span class="meta-pill">College of Engineering and Architecture</span>
+            <span class="meta-pill">Mapúa Malayan Colleges Mindanao</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#publications">View Publications</a>
+            <a class="btn btn-outline" href="#contact">Contact</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <h3>MS in Artificial Intelligence</h3>
+              <p>Ongoing graduate study at Chang Gung University, Taiwan.</p>
+            </div>
+            <div class="stat">
+              <h3>PhD in Education</h3>
+              <p>Major in Information Technology Integration.</p>
+            </div>
+            <div class="stat">
+              <h3>MS in Computer Engineering</h3>
+              <p>Completed at Mapúa University.</p>
+            </div>
+            <div class="stat">
+              <h3>BS in Computer Engineering</h3>
+              <p>Completed at the University of Mindanao.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap" id="contact">
+          <div class="hero-photo-card">
+            <img
+              src="IMG_EA6D658F-833A-463E-85C8-6B3E1AAF336B.JPEG"
+              alt="Portrait photo of Dr. John A. Bacus"
+              class="hero-photo"
+            />
+            <div class="hero-photo-caption">
+              <h2>Dr. John A. Bacus</h2>
+              <p>Faculty member, researcher, and academic conference contributor.</p>
+              <p style="margin-top: 10px;"><strong>Email:</strong> jabacus@mcm.edu.ph</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Experience</h2>
+            <p>
+              A professional trajectory across engineering education, academic leadership,
+              international conference service, and technology consulting.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Mapúa Malayan Colleges Mindanao</h3>
+            <div class="meta">2024 – Present | Associate Professor IV</div>
+            <p>
+              Serving under the College of Engineering and Architecture in instruction,
+              research, faculty engagement, and academic development.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>University of Mindanao</h3>
+            <div class="meta">2018 – 2024 | Associate Professor</div>
+            <p>
+              Contributed to engineering education through teaching, research supervision,
+              extension work, and student-centered academic initiatives.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>International Conference and IEEE-Related Academic Service</h3>
+            <div class="meta">2022 – Present | Technical Committee, Session Chair, Special Session Chair, Program Co-chair</div>
+            <p>
+              Actively involved in international conference leadership, technical review,
+              academic program organization, and session facilitation across engineering,
+              artificial intelligence, computing, and education conferences.
+            </p>
+
+            <ul>
+              <li><strong>Technical Committee</strong> — 3rd International Conference on Artificial Intelligence and Power Engineering (AIPE 2025), Nara, Japan, October 28–31, 2025</li>
+              <li><strong>Technical Committee</strong> — 2025 6th International Conference on Education Development and Studies (ICEDS 2025), Oxford, UK, March 26–28, 2025</li>
+              <li><strong>Technical Committee</strong> — 12th International Conference on Computing and Pattern Recognition (ICCPR 2023), Qingdao, China, October 27–29, 2023</li>
+              <li><strong>Technical Committee</strong> — 7th International Conference on Communication and Information Systems (ICCIS 2023), Chongqing, China, October 20–22, 2023</li>
+              <li><strong>Session Chair</strong> — 8th International Conference on E-Society, E-Education and E-Technology (ESET 2024), Taipei, Taiwan</li>
+              <li><strong>Session Chair</strong> — 5th International Conference on Electronics and Electrical Engineering Technology (EEET 2022), Beijing, China, December 2–4, 2022</li>
+              <li><strong>Session Chair</strong> — 7th International Conference on Communication and Information Systems (ICCIS 2023), Chongqing, China, October 20–22, 2023</li>
+              <li><strong>Special Session Chair</strong> — 8th International Conference on Electronics and Electrical Engineering Technology (EEET 2025), Chiba, Japan, December 5–7, 2025</li>
+              <li><strong>Program Co-chair</strong> — 8th International Conference on Communication and Information Systems (ICCIS 2024), Shenzhen, China, October 18–20, 2024</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Next BPO Solutions under DXC Technology</h3>
+            <div class="meta">2017 – 2018 | Technology Consultant / UAA Security Technician</div>
+            <p>
+              Handled high-priority technical incidents, enterprise user access, VPN permissions,
+              directory administration, and client support operations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Publications</h2>
+            <p>
+              Research outputs in artificial intelligence, computer vision, intelligent systems,
+              engineering technology, and educational innovation.
+            </p>
+          </div>
+        </div>
+
+        <div class="pub-actions">
+          <a
+            class="btn btn-primary"
+            href="https://scholar.google.com/citations?user=BaCikSQAAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Google Scholar Profile
+          </a>
+        </div>
+
+        <div class="pub-section">
+          <h3 class="pub-section-title">IEEE Publications</h3>
+          <div class="pub-list">
+            <div class="pub-item">
+              <h3>Object Detection for In-Store Product Identification: A Camera Point of Sale (POS)–Centered Approach</h3>
+              <p><span class="highlight">AIPE 2025</span> | Nara, Japan | Scopus-indexed | <a href="https://doi.org/10.1109/AIPE67885.2025.00011" target="_blank" rel="noopener noreferrer">DOI</a></p>
+            </div>
+
+            <div class="pub-item">
+              <h3>“Job or Jab?”: Detecting Fake Job Postings Using NLP</h3>
+              <p><span class="highlight">AIPE 2025</span> | Nara, Japan | Scopus-indexed | <a href="https://doi.org/10.1109/AIPE67885.2025.00010" target="_blank" rel="noopener noreferrer">DOI</a></p>
+            </div>
+
+            <div class="pub-item">
+              <h3>Deep Learning-Based Automated Detection of Polycystic Ovary Syndrome (PCOS) using Supervised Machine Learning</h3>
+              <p><span class="highlight">2025 IEEE International Conference on Automatic Control and Intelligent Systems</span> | Kuala Lumpur, Malaysia | Scopus-indexed | <a href="https://doi.org/10.1109/I2CACIS65476.2025.11100928" target="_blank" rel="noopener noreferrer">DOI</a></p>
+            </div>
+
+            <div class="pub-item">
+              <h3>Smart Helmet Detection System for Road Safety Using YOLOv8</h3>
+              <p><span class="highlight">2025 IEEE International Conference on Automatic Control and Intelligent Systems</span> | Kuala Lumpur, Malaysia | Scopus-indexed | <a href="https://doi.org/10.1109/I2CACIS65476.2025.11100776" target="_blank" rel="noopener noreferrer">DOI</a></p>
+            </div>
+
+            <div class="pub-item">
+              <h3>Impact of Predictive Learning Analytics in Higher Education: A Systematic Literature Review</h3>
+              <p><span class="highlight">ICEIT 2024</span> | Chongqing, China | Best Presenter | Scopus-indexed | <a href="https://doi.org/10.1109/ICEIT61397.2024.10540840" target="_blank" rel="noopener noreferrer">DOI</a></p>
+            </div>
+
+            <div class="pub-item">
+              <h3>Fingerprint and Face Authentication Portable Digital Electronic Voting Machine</h3>
+              <p><span class="highlight">EEET 2023</span> | Nanjing, China | Scopus-indexed | <a href="https://doi.org/10.1109/EEET61723.2023.00010" target="_blank" rel="noopener noreferrer">DOI</a></p>
+            </div>
+
+            <div class="pub-item">
+              <h3>Closed Contact Monitoring on Prescribed Social Distancing using Computer Vision</h3>
+              <p><span class="highlight">EEET 2022</span> | Beijing, China | Scopus-indexed | <a href="https://doi.org/10.1109/EEET58130.2022.00009" target="_blank" rel="noopener noreferrer">DOI</a></p>
+            </div>
+
+            <div class="pub-item">
+              <h3>Identification of Pork Meat Freshness using Neural Networks</h3>
+              <p><span class="highlight">ICETCI 2021</span> | Changchun, China | Scopus-indexed | <a href="https://doi.org/10.1109/ICETCI53161.2021.9563448" target="_blank" rel="noopener noreferrer">DOI</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-section">
+          <h3 class="pub-section-title">Journal Publications</h3>
+          <div class="pub-list">
+            <div class="pub-item">
+              <h3>Disaster-based Mobile Learning System Using Technology Acceptance Model</h3>
+              <p><span class="highlight">Engineering Proceedings</span> | Q3 Journal | Scopus-indexed | <a href="https://doi.org/10.3390/engproc2025103005" target="_blank" rel="noopener noreferrer">DOI</a></p>
+            </div>
+
+            <div class="pub-item">
+              <h3>Performance Analysis of YOLOv4-Based Multi-Object Tracker Using SORT</h3>
+              <p><span class="highlight">2nd International Conference on Emerging Technologies and Innovations</span> | University of Mindanao | <a href="https://doi.org/10.55990/umjeti.v12024.03" target="_blank" rel="noopener noreferrer">DOI</a></p>
+            </div>
+
+            <div class="pub-item">
+              <h3>Detection and Identification with Analysis of Carica Papaya using Android</h3>
+              <p><span class="highlight">Journal of Advances in Information Technology</span> | Best Presenter source conference noted in CV | <a href="https://doi.org/10.12720/jait.13.2.162-166" target="_blank" rel="noopener noreferrer">DOI</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-section">
+          <h3 class="pub-section-title">Other Conference Publications</h3>
+          <div class="pub-list">
+            <div class="pub-item">
+              <h3>Color Vision Deficiency Screening System Using ESP32 with IPS TFT Display and SD Card Interface</h3>
+              <p><span class="highlight">EEET 2025</span> | Chiba, Japan | Scopus-indexed</p>
+            </div>
+
+            <div class="pub-item">
+              <h3>A Systematic Literature Review for the Development of an Object Detection System for Monitoring Underground Crop (Garlic) Growth Using GPR</h3>
+              <p><span class="highlight">EEET 2025</span> | Chiba, Japan | Best Presenter | Scopus-indexed</p>
+            </div>
+
+            <div class="pub-item">
+              <h3>Arduino-Based Wireless Red Light–Green Light Game with Motion Sensing</h3>
+              <p><span class="highlight">EEET 2025</span> | Chiba, Japan | Scopus-indexed</p>
+            </div>
+
+            <div class="pub-item">
+              <h3>Implementation Of a Low-cost Vision-based Gesture Recognition Powerpoint Control System</h3>
+              <p><span class="highlight">EEET 2025</span> | Chiba, Japan | Scopus-indexed</p>
+            </div>
+
+            <div class="pub-item">
+              <h3>EmbedEye: An Embedded Smart Surveillance System with Boundary Alerts</h3>
+              <p><span class="highlight">EEET 2025</span> | Chiba, Japan | Scopus-indexed</p>
+            </div>
+
+            <div class="pub-item">
+              <h3>Development of an RFID-based Children’s Disaster and Emergency Preparedness Device</h3>
+              <p><span class="highlight">ESET 2024</span> | Taipei, Taiwan | Scopus-indexed | <a href="https://doi.org/10.1145/3704217.3704219" target="_blank" rel="noopener noreferrer">DOI</a></p>
+            </div>
+
+            <div class="pub-item">
+              <h3>Papaya Leaf Disease Identification using ResNet with Transfer Learning</h3>
+              <p><span class="highlight">ICRAE 2023</span> | Singapore | Scopus-indexed | <a href="https://doi.org/10.1109/ICRAE59816.2023.10458541" target="_blank" rel="noopener noreferrer">DOI</a></p>
+            </div>
+
+            <div class="pub-item">
+              <h3>Development of Self-Service Baggage Counter System (Undergraduate Thesis)</h3>
+              <p><span class="highlight">Council of Deans for Engineering Education Research Prototype Region XI</span> | Awarded 2nd Runner Up for Education Category</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<section id="current-projects">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Current Projects</h2>
+        <p>
+          Ongoing undergraduate research and capstone projects under academic advisement,
+          focusing on artificial intelligence, embedded systems, computer vision, and applied innovation.
+        </p>
+      </div>
+    </div>
+
+    <div class="cards-3">
+      <div class="card">
+        <h3>AI-Driven Waste Segregation and IoT-Enabled Smart Bins: A Reward-Based Approach to Sustainable Waste Management</h3>
+        <div class="meta">Undergraduate Advisees</div>
+        <p>
+          Lyka Sophia S. Jardeleza, Ian Carl P. Solana, and Justin Jay C. Valenzuela
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>ExerCheck: A Wireframe Pose Form Estimation and Analysis System for Pre-Recorded Student Exercise-Based Routines in PATHFIT</h3>
+        <div class="meta">Undergraduate Advisees</div>
+        <p>
+          Verdan, Hym M., Alforque, Tristan Shawn, and Laporre, Peter Miles
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Near Real-Time Road Crack Detection System Using AI on Embedded Devices</h3>
+        <div class="meta">Undergraduate Advisees</div>
+        <p>
+          George Miguel Batalan, Danielle Joshua Orihuela, and Jericho Tabingo Lagang
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+    <section id="funded-projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Funded Projects</h2>
+            <p>
+              Supported research and development work aligned with applied engineering and intelligent systems.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-2">
+          <div class="card">
+            <h3>DREAM-Ph (DPWH Road Evaluation and Mapping of Potholes)</h3>
+            <div class="meta">Project Leader | April 2024 – April 2025</div>
+            <p>
+              Geospatial, prescriptive, and diagnostic analytics for road pothole detection,
+              funded under <strong>DOST-PCIEERD (GODDESS)</strong>.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Research Focus Areas</h3>
+            <div class="meta">Engineering, AI, and Applied Systems</div>
+            <p>
+              Current scholarly interests include artificial intelligence, computer vision,
+              machine learning systems, embedded computing, educational technology,
+              and practical engineering innovations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Teaching</h2>
+            <p>
+              Courses handled across lecture and laboratory formats in artificial intelligence,
+              computer engineering, embedded systems, data science, and programming.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-2">
+          <div class="card">
+            <h3>2025–2026 1st Term</h3>
+            <div class="meta">Course Loads</div>
+            <ul style="padding-left: 18px; margin-top: 10px;">
+              <li>Introduction to AI <strong>(Lecture and Laboratory)</strong></li>
+              <li>Microprocessor Systems <strong>(Lecture and Laboratory)</strong></li>
+              <li>Applied Data Science <strong>(Purely Laboratory)</strong></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>2025–2026 2nd Term</h3>
+            <div class="meta">Course Loads</div>
+            <ul style="padding-left: 18px; margin-top: 10px;">
+              <li>Embedded Systems <strong>(Lecture and Laboratory)</strong></li>
+              <li>Introduction to AI <strong>(Lecture and Laboratory)</strong></li>
+              <li>Applied Data Science <strong>(Purely Laboratory)</strong></li>
+              <li>Computer Fundamentals and Programming <strong>(Purely Laboratory)</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="updates">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Updates</h2>
+            <p>
+              Recent academic, scholarly, and professional highlights.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-3">
+          <div class="card update-box">
+            <h3>Graduate Study in AI</h3>
+            <p>
+              Currently pursuing a Master of Science in Artificial Intelligence at Chang Gung University, Taiwan.
+            </p>
+          </div>
+
+          <div class="card update-box">
+            <h3>International Research Engagement</h3>
+            <p>
+              Presented and published research in international Scopus-indexed conferences in engineering and AI.
+            </p>
+          </div>
+
+          <div class="card update-box">
+            <h3>Academic Conference Leadership</h3>
+            <p>
+              Serving in international conference roles including technical committee, session chair,
+              special session chair, and program co-chair.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>
+        <strong>Dr. John A. Bacus</strong> — College of Engineering and Architecture,
+        Mapúa Malayan Colleges Mindanao
+      </div>
+      <div>Faculty Academic Profile</div>
+    </div>
+  </footer>
+</body>
+</html>
