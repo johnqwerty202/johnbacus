@@ -377,6 +377,35 @@ section {
   line-height: 1.65;
 }
 
+.pub-item p.pub-authors {
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.recognition-list {
+  list-style: none;
+  margin-top: 14px;
+}
+
+.recognition-list li {
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.recognition-list li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.recognition-list li strong {
+  display: block;
+  color: #111827;
+  font-size: 1rem;
+}
+
 .pub-item a {
   color: var(--primary);
   font-weight: 700;
