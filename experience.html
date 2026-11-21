@@ -8,13 +8,19 @@
     name="description"
     content="Official faculty profile of Dr. John A. Bacus, Associate Professor IV, College of Engineering and Architecture, Mapúa Malayan Colleges Mindanao."
   />
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="theme-color" content="#7a0019" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237a0019'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EJB%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a href="index.html" class="brand">Dr. John A. Bacus</a>
-      <nav class="nav-links">
+      <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true">JB</span>Dr. John A. Bacus</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle-icon" aria-hidden="true"></span>Menu</button>
+      <nav class="nav-links" id="site-nav">
         <a href="index.html">Home</a>
         <a href="experience.html" class="active" aria-current="page">Experience</a>
         <a href="publications.html">Publications</a>
@@ -28,18 +34,16 @@
   </header>
 
   <main>
+    <div class="page-banner">
+      <div class="container">
+        <div class="eyebrow">Faculty Profile</div>
+        <h1>Experience</h1>
+        <p>A professional trajectory across engineering education, academic leadership, international conference service, and technology consulting.</p>
+      </div>
+    </div>
+
     <section id="experience">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Experience</h2>
-            <p>
-              A professional trajectory across engineering education, academic leadership,
-              international conference service, and technology consulting.
-            </p>
-          </div>
-        </div>
-
         <div class="timeline">
           <div class="timeline-item">
             <h3>Chang Gung University</h3>
@@ -121,5 +125,17 @@
       <div>Faculty Academic Profile</div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('site-nav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+  </script>
 </body>
 </html>
